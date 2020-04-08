@@ -30,9 +30,9 @@ def decrypt(key, iv, ciphertext):
 
 def command_line_args():
     parser = argparse.ArgumentParser(description='Decrypt files produced by htme.')
-    parser.add_argument('-i', '--iv', help='The initialisation vector used to encrypt.', required=True)
-    parser.add_argument('-k', '--data-key', help='The plaintext decryption key.', required=True)
-    parser.add_argument('-z', '--decompress', help='Decompress the decrypted text.', action='store_true')
+    parser.add_argument('-i', '--iv', required=True, help='The initialisation vector used to encrypt.')
+    parser.add_argument('-k', '--data-key', required=True, help='The plaintext decryption key.')
+    parser.add_argument('-z', '--decompress', action='store_true', help='Decompress the decrypted text.')
     parser.add_argument('encrypted_file', help='The encrypted file.')
     return parser.parse_args()
 
